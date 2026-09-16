@@ -16,6 +16,7 @@ export const primaryNavigation: LocalizedNavigationItem[] = [
   { href: "/price-and-editions/", labels: { "en-US": "Price & Editions" } },
   // Gameplay & content cluster
   { href: "/gameplay/", labels: { "en-US": "Gameplay" } },
+  { href: "/technology-eras/", labels: { "en-US": "Technology Eras" } },
   { href: "/faq/", labels: { "en-US": "FAQ" } },
   // Updates cluster
   { href: "/news/", labels: { "en-US": "News" } },

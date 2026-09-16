@@ -6,6 +6,14 @@ Record every growth-relevant edit here. Keep entries short, factual, and useful 
 
 ## Change Log
 
+### 2026-09-17 - Launch-day technology-era framework reference page added
+
+- Task: Add a launch-day framework reference page that names the four Nightwater technology eras in canonical order, states each era's general role (production-chain capability expansion), flags the Future era as the lighthouse culmination, and lists the Sticks & Stones starting toolkit. Cite the Steam store description and the 2UpSkill preview as primary sources, cross-link from /home and /gameplay, and explicitly mark Lighthouse endings / Manifestor biome / minigame content as watch-class pending post-launch evidence.
+- Files changed: `src/data/pages/fixed-pages.ts` (new `fixed-technology-eras-en-US` page), `src/data/pages/home.ts` (gameplay-reference module now lists the new page), `src/data/navigation.ts` (new nav entry under the gameplay cluster), `CONTENT_INDEX.md` (new row + cluster/linking updates).
+- URLs affected: New page at `/technology-eras/`. Existing `/` and `/gameplay/` URLs now link to it.
+- SEO/GEO changed: New canonical four-era framework page cross-linked from the home gameplay-reference module and the gameplay page; sitemap/IndexNow will pick it up automatically.
+- Verification: `npm run verify` and the existing local validators must pass before publishing.
+
 ### 2026-09-16 - Adsterra integration populated fixed six-unit ads config
 
 - Task: Replace empty Adsterra placeholder values in `src/data/ads.ts` with the fixed six real Adsterra unit codes (Native Banner, Banner 728x90, Banner 468x60, Banner 320x50, Banner 160x600, Smartlink) for the launch Adsterra integration.

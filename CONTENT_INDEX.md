@@ -17,6 +17,7 @@ hreflang, sitemap, and route-manifest validation.
 | `/guides` | `src/data/pages/guide-pages.ts` | Guide | Template Game guides | Find guide topics before launch | Wiki / Release Info | Hub | Do not invent walkthroughs before reliable details exist. |
 | `/release-date` | `src/data/pages/release-pages.ts` | Guide | Template Game release date | Check release timing and platforms | FAQ / Wiki | Supporting hub | Must stay tied to official or store sources. |
 | `/faq` | `src/data/pages/site-pages.ts` | Guide | Template Game FAQ | Get short answers | Release Info / Contact | Answer hub | FAQ schema enabled. |
+| `/technology-eras` | `src/data/pages/fixed-pages.ts` | Guide | Nightwater technology eras | Learn the canonical era order and role of each era | Gameplay / Steam | Supporting hub | Launch-day framework reference; per-era unlocks flagged as pending post-launch evidence. |
 | `/about` | `src/data/pages/site-pages.ts` | Utility | about Template Game Guide | Trust and editorial policy | Contact | Trust | Explain unofficial status and sourcing rules. |
 | `/contact` | `src/data/pages/site-pages.ts` | Utility | contact Template Game Guide | Corrections and source updates | About | Trust | Contact channel pending. |
 | `/privacy-policy` | `src/data/pages/site-pages.ts` | Legal | privacy policy | Privacy and analytics | Terms | Trust | GA4 only when configured. |
@@ -34,6 +35,7 @@ hreflang, sitemap, and route-manifest validation.
 - Launch facts: `/release-date`, `/faq`
 - Official facts and safe guide structure: `/wiki`, `/guides`
 - Evergreen hub and trust: `/`, `/about`, `/contact`, `/privacy-policy`, `/terms`
+- Gameplay & reference: `/gameplay`, `/technology-eras`
 
 ## Internal Linking Map
 
@@ -42,6 +44,8 @@ hreflang, sitemap, and route-manifest validation.
 - Guides should link to wiki and release pages.
 - Release Date should link to FAQ and official sources.
 - FAQ should include all current high-demand answer pages.
+- Gameplay should cross-link to `/technology-eras` for the launch-day era framework.
+- Technology Eras should cross-link back to `/gameplay` and the Steam page for per-era detail.
 
 ## Open Questions
 

@@ -508,7 +508,14 @@ export const fixedPages: PageContent[] = [
         type: "prose",
         heading: "The four technology eras",
         body:
-          "Nightwater gameplay moves through four named technology eras — Sticks & Stones, Bronze, Industrial, and Future — listed on the Steam store page as the progression axis of the campaign. Each era expands the production chain capabilities available to the player, and the era transitions are the major milestones of any single run. The eras are official-store facts; specific in-era production recipes and unlock thresholds are not enumerated on the Steam page and are not a fact for this page.",
+          "Nightwater gameplay moves through four named technology eras — Sticks & Stones, Bronze, Industrial, and Future — listed on the Steam store page as the progression axis of the campaign. Each era expands the production chain capabilities available to the player, and the era transitions are the major milestones of any single run. The eras are official-store facts; specific in-era production recipes and unlock thresholds are not enumerated on the Steam page and are not a fact for this page. See the technology-eras page for the launch-day framework reference (canonical order, role of each era, manual-to-industrial arc, and Future as the lighthouse culmination).",
+        links: [
+          {
+            label: "Technology eras",
+            href: "/technology-eras/",
+            description: "Launch-day framework reference for the four-era progression.",
+          },
+        ],
       },
       {
         id: "manifestor-biome-expansion",
@@ -540,7 +547,117 @@ export const fixedPages: PageContent[] = [
       },
     ],
     faqIds: ["how-does-nightwater-play", "what-are-the-tech-eras", "what-is-the-manifestor", "how-do-lighthouse-endings-work"],
-    relatedPageIds: ["home", "fixed-overview-en-US", "fixed-faq-en-US"],
+    relatedPageIds: ["home", "fixed-technology-eras-en-US", "fixed-overview-en-US", "fixed-faq-en-US"],
+    schemaTypes: ["Article", "BreadcrumbList"],
+    sourceStatus: "official",
+    lastReviewed: RESEARCH_DATE,
+  },
+
+  // ---------------------------------------------------------------
+  // technology-eras — Launch-day framework reference
+  // ---------------------------------------------------------------
+  {
+    id: "fixed-technology-eras-en-US",
+    translationKey: "technology-eras",
+    locale: "en-US",
+    routeKind: "fixed",
+    slug: "technology-eras",
+    url: "/technology-eras",
+    pageType: "wiki",
+    presentation: { shell: "content", variant: "reading-right-rail" },
+    h1: "Nightwater technology eras: Sticks & Stones, Bronze, Industrial, Future",
+    seoTitle: "Nightwater technology eras: order, role, and Future as lighthouse culmination",
+    metaDescription:
+      "Nightwater's four technology eras in canonical order: Sticks & Stones, Bronze, Industrial, Future. Each era expands production chain capability; Future is the lighthouse culmination.",
+    summary:
+      "Launch-day framework reference for the Nightwater technology era progression: canonical era order, the role of each era, the manual-to-industrial arc, the Sticks & Stones starting toolkit, and Future as the lighthouse culmination.",
+    hero: {
+      eyebrow: "Era framework",
+      subtitle:
+        "Four technology eras move Nightwater's campaign from manual gathering to industrial automation and on to the lighthouse. Use this as the canonical order reference; per-era recipes, structures, and unlock thresholds remain pending post-launch evidence.",
+      ctas: [
+        { label: "Gameplay", href: "/gameplay/" },
+        { label: "Open Steam page", href: STEAM_URL },
+      ],
+    },
+    quickAnswer:
+      "Nightwater moves through four technology eras in this canonical order: Sticks & Stones, Bronze, Industrial, and Future. Each era expands the production chain capabilities available to the player, and the Future era is the lighthouse culmination that ends the campaign. The era order and roles are confirmed by the Steam store page for AppID 3983860 and paraphrased in third-party preview coverage such as the 2UpSkill write-up. Per-era recipes, structures, and unlock thresholds are not yet public and are flagged as pending post-launch evidence.",
+    keyFacts: [
+      { label: "Era count", value: "Four named technology eras" },
+      { label: "Canonical order", value: "Sticks & Stones → Bronze → Industrial → Future" },
+      { label: "Era role", value: "Each era expands production chain capability" },
+      { label: "Progression arc", value: "Manual → industrial → lighthouse culmination" },
+      { label: "Starting toolkit", value: "Sticks & Stones — manual gathering, basic crafting" },
+      { label: "Culmination era", value: "Future — lighthouse endpoint" },
+      { label: "Last verified", value: "2026-09-16" },
+    ],
+    modules: [
+      {
+        id: "era-order",
+        type: "prose",
+        heading: "Canonical era order",
+        body:
+          "Nightwater moves through four named technology eras in a fixed order: Sticks & Stones, Bronze, Industrial, and Future. The Steam store page for AppID 3983860 lists these four era names as the progression axis of the campaign; the same era order is also paraphrased in third-party preview coverage such as the 2UpSkill write-up at https://2upskill.com/?p=9147/. Treat this as the canonical sequence when planning a run: each era unlocks the production capabilities required to reach the next one.",
+        links: [
+          {
+            label: "Steam store page (AppID 3983860)",
+            href: STEAM_URL,
+            description: "Canonical source for the four-era framework.",
+          },
+          {
+            label: "2UpSkill preview",
+            href: "https://2upskill.com/?p=9147/",
+            description: "Third-party preview paraphrasing the same progression arc.",
+          },
+        ],
+      },
+      {
+        id: "era-roles",
+        type: "prose",
+        heading: "Role of each era",
+        body:
+          "Each era expands the production chain capabilities available to the player. Sticks & Stones is the manual starting toolkit: hand-gathered resources, basic crafting, and the shortest production chains of the campaign. Bronze adds the first metal-tier production steps and more structured crafting. Industrial introduces powered machinery, larger-scale automation, and the production lines that can sustain an island-wide factory. Future is the lighthouse culmination — the highest technology tier and the era in which the campaign reaches its narrative endpoint through the lighthouse endings.",
+      },
+      {
+        id: "progression-arc",
+        type: "prose",
+        heading: "Manual-to-industrial progression arc",
+        body:
+          "Each transition is a major milestone of any single run. The arc is a capability ladder rather than a fixed unlock schedule — manual labor gives way to structured production, structured production gives way to powered machinery, and powered machinery gives way to the lighthouse culmination. Specific per-era recipes, structures, and thresholds are not enumerated on the Steam page, so treat the eras as ordered capability tiers and re-check the store page once those details are posted.",
+      },
+      {
+        id: "starting-toolkit",
+        type: "prose",
+        heading: "Sticks & Stones — the early-era starting toolkit",
+        body:
+          "Sticks & Stones is the player's starting toolkit. Resources are gathered by hand, crafting is basic, and the production chains are the shortest of the campaign. This is the era in which players learn the factory loop and lay down the manual workflows that Bronze will later reorganize around metal-tier production. Anything beyond the existence of Sticks & Stones as the starting era — including specific recipes, structures, and unlock thresholds — is pending post-launch evidence on the Steam page.",
+        links: [
+          {
+            label: "Gameplay",
+            href: "/gameplay/",
+            description: "How the factory loop interacts with the Manifestor and lighthouse endings.",
+          },
+        ],
+      },
+      {
+        id: "future-culmination",
+        type: "callout",
+        tone: "tip",
+        title: "Future era — lighthouse culmination",
+        body:
+          "The Future era is the lighthouse culmination: the highest technology tier and the era in which the campaign reaches its narrative endpoint through the lighthouse endings. The lighthouse is the spine of the multi-ending narrative, not a single fixed finale; reaching it through different era and Manifestor choices drives different conclusions. The Future-as-culmination framing is official-store fact; specific Future-era unlocks and ending triggers are not enumerated on the Steam page.",
+      },
+      {
+        id: "pending-post-launch-evidence",
+        type: "callout",
+        tone: "caution",
+        title: "Pending post-launch evidence (watch-class)",
+        body:
+          "Per-era recipes, structures, and unlock thresholds are not enumerated on the Steam page as of 2026-09-16. Lighthouse endings, Manifestor biome content, and the five minigame systems are also marked as watch-class: their broad role is confirmed by the Steam store page, but their specific triggers, rewards, and progression requirements are pending post-launch evidence. The Steam page at https://store.steampowered.com/app/3983860 is the source of truth; this page will be updated when those details are posted.",
+      },
+    ],
+    faqIds: ["what-are-the-tech-eras"],
+    relatedPageIds: ["home", "fixed-gameplay-en-US", "fixed-overview-en-US"],
     schemaTypes: ["Article", "BreadcrumbList"],
     sourceStatus: "official",
     lastReviewed: RESEARCH_DATE,

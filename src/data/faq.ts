@@ -153,7 +153,7 @@ export const faqItems: FAQItem[] = [
     question: "What are the technology eras in Nightwater?",
     answer:
       "The four technology eras listed on the Steam page are Sticks & Stones, Bronze, Industrial, and Future. Each era expands the production chain capabilities available to the player.",
-    pageIds: ["fixed-gameplay-en-US"],
+    pageIds: ["fixed-gameplay-en-US", "fixed-technology-eras-en-US"],
     category: "gameplay",
     schemaEligible: true,
     sourceStatus: "official",

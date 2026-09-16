@@ -92,6 +92,11 @@ export const homePage: PageContent = {
           href: "/gameplay/",
         },
         {
+          title: "Technology eras",
+          summary: "Era order, role, and the lighthouse culmination.",
+          href: "/technology-eras/",
+        },
+        {
           title: "FAQ",
           summary: "Launch-window questions answered with dated sources.",
           href: "/faq/",
@@ -122,6 +127,7 @@ export const homePage: PageContent = {
     "fixed-overview-en-US",
     "fixed-release-date-en-US",
     "fixed-gameplay-en-US",
+    "fixed-technology-eras-en-US",
     "fixed-system-requirements-en-US",
     "fixed-steam-page-en-US",
   ],
