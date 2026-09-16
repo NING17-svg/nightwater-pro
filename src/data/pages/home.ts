@@ -9,63 +9,123 @@ export const homePage: PageContent = {
   slug: "",
   url: "/",
   pageType: "home",
-  presentation: { shell: "home" },
-  h1: `${site.gameName} Guide Hub`,
-  seoTitle: `${site.gameName} Guide Hub | Wiki, Guides, Release Date, FAQ`,
+  presentation: { shell: "home", variant: "split-panel" },
+  h1: "Nightwater game: launch hub for Studio Ashty's Sep 18 release",
+  seoTitle:
+    "Nightwater game: launch hub for Studio Ashty's Sep 18 release",
   metaDescription:
-    "A clean guide hub template with wiki notes, starter guides, release information, FAQs, and trust pages for a game攻略站 launch.",
+    "Nightwater game is Studio Ashty's 2026 Steam factory and automation builder launching Sep 18, 2026. This hub covers release, specs, platforms and official news.",
   summary:
-    "Start here for the wiki index, guide categories, launch information, and frequently asked questions.",
+    "Launch-window reference hub for Nightwater (Steam AppID 3983860): release date, system requirements, platforms, gameplay loop, and the lighthouse endings.",
   hero: {
-    eyebrow: "Unofficial guide hub",
-    subtitle: site.tagline,
+    eyebrow: "Launch hub",
+    subtitle:
+      "Nightwater launches on Steam on September 18, 2026. This hub gives launch-window readers the confirmed release window, official PC specs, storefront scope, and the four-era factory loop that ends in lighthouse endings.",
     ctas: [
-      { label: "Open Wiki", href: "/wiki" },
-      { label: "Browse Guides", href: "/guides" },
+      { label: "Release date", href: "/release-date/" },
+      { label: "Open Steam page", href: "https://store.steampowered.com/app/3983860" },
     ],
   },
   quickAnswer:
-    "This homepage acts as the central guide hub for the selected game, linking users to wiki notes, guides, release information, and FAQs.",
+    "Nightwater is a 2026 Steam factory and automation game developed by Studio Ashty and published by Studio Ashty and Irox Games. It releases on Steam on September 18, 2026 for Windows. The campaign runs across four technology eras (Sticks & Stones, Bronze, Industrial, Future), uses the Manifestor to clear fog and expand the island biome-by-biome, layers five minigame systems, and ends at the lighthouse through multiple possible endings.",
   keyFacts: [
-    { label: "Site type", value: "Unofficial guide hub" },
-    { label: "V1 page set", value: "5 content pages + 4 trust pages" },
-    { label: "Source rule", value: "Official facts only before launch" },
+    { label: "Release date", value: "September 18, 2026 (Steam AppID 3983860)" },
+    { label: "Developer", value: "Studio Ashty" },
+    { label: "Publisher", value: "Studio Ashty, Irox Games" },
+    { label: "Platform", value: "Windows + Steam storefront" },
+    { label: "Genre", value: "Factory / automation / resource progression" },
+    { label: "Last verified", value: "2026-09-16" },
   ],
   modules: [
     {
-      id: "start-here",
-      type: "prose",
-      heading: "Start here",
-      body:
-        "Use the wiki page for core game facts, the guides page for player-facing help, and the release page for official launch timing. Replace each placeholder with verified information before publishing.",
-      links: [
-        { label: "Wiki", href: "/wiki", description: "Core facts and game systems." },
-        { label: "Guides", href: "/guides", description: "Starter guide categories." },
-        { label: "Release Date", href: "/release-date", description: "Official launch timing." },
+      id: "identity-launch",
+      type: "entity-grid",
+      heading: "Identity & launch",
+      items: [
+        {
+          title: "Overview",
+          summary: "Developer, publisher, genre, setting and lighthouse endings.",
+          href: "/overview/",
+        },
+        {
+          title: "Release date",
+          summary: "Confirmed September 18, 2026 launch window.",
+          href: "/release-date/",
+        },
+        {
+          title: "Steam page",
+          summary: "Canonical anchor for every Nightwater fact.",
+          href: "/steam-page/",
+        },
       ],
     },
     {
-      id: "safe-launch",
-      type: "prose",
-      heading: "Safe launch baseline",
-      body:
-        "The template keeps the first version small so the launch workflow can verify routing, metadata, sitemap, robots, analytics, and Search Console submission before deeper content work begins.",
+      id: "hardware-access",
+      type: "entity-grid",
+      heading: "Hardware & access",
+      items: [
+        {
+          title: "System requirements",
+          summary: "Minimum and recommended Windows PC specs.",
+          href: "/system-requirements/",
+        },
+        {
+          title: "Platforms",
+          summary: "Windows + Steam storefront, console status not announced.",
+          href: "/platforms/",
+        },
+        {
+          title: "Price & editions",
+          summary: "Price, edition structure and demo status (not announced).",
+          href: "/price-and-editions/",
+        },
+      ],
     },
     {
-      id: "example-entries",
+      id: "gameplay-reference",
       type: "entity-grid",
-      heading: "Guide Entry Points",
+      heading: "Gameplay & reference",
       items: [
-        { title: "Wiki", summary: "Core facts and game systems.", href: "/wiki" },
-        { title: "Guides", summary: "Starter guide categories.", href: "/guides" },
-        { title: "Release Date", summary: "Official launch timing.", href: "/release-date" },
-        { title: "FAQ", summary: "Short answers and source context.", href: "/faq" },
+        {
+          title: "Gameplay",
+          summary: "Four eras, the Manifestor, and the lighthouse endings.",
+          href: "/gameplay/",
+        },
+        {
+          title: "FAQ",
+          summary: "Launch-window questions answered with dated sources.",
+          href: "/faq/",
+        },
+      ],
+    },
+    {
+      id: "updates",
+      type: "entity-grid",
+      heading: "Updates",
+      items: [
+        {
+          title: "News",
+          summary: "Official Steam news index for AppID 3983860.",
+          href: "/news/",
+        },
       ],
     },
   ],
-  faqIds: ["what-is-this-site", "is-official"],
-  relatedPageIds: ["wiki", "guides", "release-date", "faq"],
-  schemaTypes: ["WebSite", "CollectionPage", "FAQPage"],
-  sourceStatus: "internal",
-  lastReviewed: "2026-06-18",
+  faqIds: [
+    "when-does-nightwater-release",
+    "is-nightwater-multiplayer",
+    "what-platforms-is-nightwater-on",
+    "is-there-a-nightwater-demo",
+    "how-much-does-nightwater-cost",
+  ],
+  relatedPageIds: [
+    "fixed-overview-en-US",
+    "fixed-release-date-en-US",
+    "fixed-gameplay-en-US",
+    "fixed-system-requirements-en-US",
+    "fixed-steam-page-en-US",
+  ],
+  schemaTypes: ["WebSite", "BreadcrumbList"],
+  sourceStatus: "official",
+  lastReviewed: "2026-09-16",
 };

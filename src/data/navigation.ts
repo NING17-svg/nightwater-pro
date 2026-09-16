@@ -6,10 +6,19 @@ export interface LocalizedNavigationItem {
 }
 
 export const primaryNavigation: LocalizedNavigationItem[] = [
-  { href: "/wiki", labels: { "en-US": "Wiki" } },
-  { href: "/guides", labels: { "en-US": "Guides" } },
-  { href: "/release-date", labels: { "en-US": "Release Date" } },
-  { href: "/faq", labels: { "en-US": "FAQ" } },
+  // Identity & launch cluster
+  { href: "/overview/", labels: { "en-US": "Overview" } },
+  { href: "/release-date/", labels: { "en-US": "Release Date" } },
+  { href: "/steam-page/", labels: { "en-US": "Steam Page" } },
+  // Reference cluster
+  { href: "/system-requirements/", labels: { "en-US": "System Requirements" } },
+  { href: "/platforms/", labels: { "en-US": "Platforms" } },
+  { href: "/price-and-editions/", labels: { "en-US": "Price & Editions" } },
+  // Gameplay & content cluster
+  { href: "/gameplay/", labels: { "en-US": "Gameplay" } },
+  { href: "/faq/", labels: { "en-US": "FAQ" } },
+  // Updates cluster
+  { href: "/news/", labels: { "en-US": "News" } },
 ];
 
 export const footerNavigation: LocalizedNavigationItem[] = [

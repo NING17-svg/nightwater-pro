@@ -1,59 +1,9 @@
 import { site } from "@/data/site";
 import type { PageContent } from "@/types/content";
 
+const RESEARCH_DATE = "2026-09-16";
+
 export const sitePages: PageContent[] = [
-  {
-    id: "faq",
-    translationKey: "faq",
-    locale: "en-US",
-    routeKind: "fixed",
-    slug: "faq",
-    url: "/faq",
-    pageType: "faq",
-    presentation: { shell: "content", variant: "reading-full" },
-    h1: `${site.gameName} FAQ`,
-    seoTitle: `${site.gameName} FAQ | Common Questions`,
-    metaDescription:
-      "A frequently asked questions page template for site status, release info, platforms, and starter guide scope.",
-    summary:
-      "A compact FAQ page for launch questions and safe starter answers.",
-    hero: {
-      eyebrow: "FAQ",
-      subtitle:
-        "Answer common launch, platform, wiki, and guide-scope questions without overclaiming.",
-      ctas: [
-        { label: "Release Info", href: "/release-date" },
-        { label: "Contact", href: "/contact" },
-      ],
-    },
-    quickAnswer:
-      "This FAQ should answer only what the site can support with official facts or clear internal policy.",
-    keyFacts: [
-      { label: "FAQ source", value: "Official facts or site policy" },
-      { label: "Schema", value: "FAQ JSON-LD enabled" },
-      { label: "Review", value: "Update as launch facts change" },
-    ],
-    modules: [
-      {
-        id: "faq-policy",
-        type: "prose",
-        heading: "FAQ policy",
-        body:
-          "Keep answers short, source-aware, and easy to update. Avoid speculative claims about release dates, platforms, gameplay systems, or technical details.",
-      },
-    ],
-    faqIds: [
-      "what-is-this-site",
-      "is-official",
-      "release-date-known",
-      "platforms-known",
-      "guide-depth",
-    ],
-    relatedPageIds: ["wiki", "guides", "release-date", "about"],
-    schemaTypes: ["FAQPage", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
-  },
   {
     id: "about",
     translationKey: "about",
@@ -66,21 +16,22 @@ export const sitePages: PageContent[] = [
     h1: `About ${site.name}`,
     seoTitle: `About ${site.name}`,
     metaDescription:
-      "About page template for an unofficial game guide site, including scope, sourcing, and editorial principles.",
+      "About Nightwater Reference: an unofficial fan-built launch hub sourced from the official Steam store page on the research date.",
     summary:
-      "A trust page explaining the site's unofficial status, sourcing rules, and guide scope.",
+      "What Nightwater Reference covers, how facts are sourced, and what readers should expect.",
     hero: {
       eyebrow: "About",
       subtitle:
-        "Explain what the site covers, how facts are sourced, and what readers should expect.",
+        "Nightwater Reference is an unofficial fan-built launch hub for Nightwater (Steam AppID 3983860) sourced from the official Steam store page and Steam-published news on 2026-09-16.",
       ctas: [{ label: "Contact", href: "/contact" }],
     },
     quickAnswer:
-      `${site.name} is an unofficial guide hub template that should be filled with verified game information before launch.`,
+      "Nightwater Reference is an unofficial fan-built launch hub for Nightwater (Steam AppID 3983860). Every fact is dated to 2026-09-16, sourced from the official Steam store page or Steam-published news, and re-verified against the live store at the research date.",
     keyFacts: [
-      { label: "Status", value: "Unofficial fan guide" },
-      { label: "Editorial rule", value: "Verified facts first" },
-      { label: "Scope", value: "Wiki, guides, release info, FAQ" },
+      { label: "Status", value: "Unofficial fan reference" },
+      { label: "Research date", value: RESEARCH_DATE },
+      { label: "Source rule", value: "Steam store page + Steam-published news" },
+      { label: "Canonical anchor", value: "https://store.steampowered.com/app/3983860" },
     ],
     modules: [
       {
@@ -88,21 +39,28 @@ export const sitePages: PageContent[] = [
         type: "prose",
         heading: "Mission",
         body:
-          "Help players find clear, well-structured information without pretending the site knows more than official sources support.",
+          "Help English-language launch-window readers decide whether Nightwater is for them, when and where to play it on PC Steam, and what the four-era factory loop and lighthouse endings add up to. The hub covers identity, release date, system requirements, platforms, price, gameplay loop, official Steam news, and FAQ — all anchored to the official Steam store page for AppID 3983860.",
       },
       {
         id: "sourcing",
         type: "prose",
         heading: "Sourcing",
         body:
-          "Use official websites, store pages, developer updates, publisher posts, and press materials for launch facts. Mark uncertain areas as pending instead of filling gaps with guesses.",
+          "Use only the official Steam store page for AppID 3983860 and Steam-published news (https://store.steampowered.com/news/app/3983860) to set current-game hard facts (release date, developer, publisher, genre, system requirements, platforms, era names, Manifestor, lighthouse endings). Any unannounced item (price, hour-of-release, edition structure, demo, multiplayer, macOS, Linux, Steam Deck verified status) is written as a dated not-announced statement rather than as a placeholder or TBD.",
+      },
+      {
+        id: "editorial",
+        type: "prose",
+        heading: "Editorial rules",
+        body:
+          "All facts are dated to the research date 2026-09-16. No speculation, no third-party recap posts, no copy from other fan sites. The site never uses the Studio Ashty wordmark or the Irox Games marks; brand presentation relies on the text brand mark and the approved dark theme palette only.",
       },
     ],
-    faqIds: ["what-is-this-site", "is-official"],
+    faqIds: [],
     relatedPageIds: ["contact", "privacy-policy", "terms"],
-    schemaTypes: ["Article", "BreadcrumbList", "FAQPage"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    schemaTypes: ["Article", "BreadcrumbList"],
+    sourceStatus: "official",
+    lastReviewed: RESEARCH_DATE,
   },
   {
     id: "contact",
@@ -116,43 +74,50 @@ export const sitePages: PageContent[] = [
     h1: "Contact",
     seoTitle: `Contact | ${site.name}`,
     metaDescription:
-      "Contact page template for corrections, official source updates, and site feedback.",
+      "Contact Nightwater Reference for corrections, official source links, and editorial feedback.",
     summary:
-      "A trust page for corrections, source updates, and site feedback.",
+      "How to send corrections, official source links, and editorial feedback to the Nightwater Reference.",
     hero: {
       eyebrow: "Contact",
       subtitle:
-        "Use this page for corrections, source updates, and feedback channels.",
+        "Send corrections, official source links, and editorial feedback to the maintainers of Nightwater Reference.",
       ctas: [{ label: "Read About", href: "/about" }],
     },
     quickAnswer:
-      "Replace this page with a working contact method before launch, such as an email address or contact form.",
+      "Email support@nightwater.pro for corrections, source links, or editorial feedback. Include the official source URL and the page that needs to be updated.",
     keyFacts: [
-      { label: "Primary use", value: "Corrections and feedback" },
-      { label: "Launch requirement", value: "Add a real contact method" },
-      { label: "Response", value: "Set expectations clearly" },
+      { label: "Email", value: "support@nightwater.pro" },
+      { label: "Primary use", value: "Corrections and source links" },
+      { label: "Response window", value: "Best-effort, no SLA" },
     ],
     modules: [
       {
         id: "contact-method",
         type: "prose",
-        heading: "Contact method",
+        heading: "Email",
         body:
-          "Add a real email address or form endpoint before publishing. This placeholder exists so the site has a complete trust-page structure.",
+          "Email support@nightwater.pro for corrections, source links, or editorial feedback. The address is also published as a Cloudflare Email Routing forwarder under the same domain.",
       },
       {
         id: "corrections",
         type: "prose",
         heading: "Corrections",
         body:
-          "Invite readers to send official source links when facts change. Do not ask for private account information or game account credentials.",
+          "If a fact on this site differs from the official Steam store page or Steam-published news, send the correct source URL plus the page URL on this site that needs to be updated. Corrections are reviewed and applied before the next research pass.",
+      },
+      {
+        id: "sources",
+        type: "prose",
+        heading: "Sources we accept",
+        body:
+          "Official Steam store page for AppID 3983860, Steam-published news for AppID 3983860, and any first-party Studio Ashty or Irox Games announcement referenced from the Steam news index. Third-party outlets, fan wikis, and recap posts are not accepted as primary sources.",
       },
     ],
     faqIds: [],
     relatedPageIds: ["about", "privacy-policy", "terms"],
     schemaTypes: ["Article", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: RESEARCH_DATE,
   },
   {
     id: "privacy-policy",
@@ -163,53 +128,61 @@ export const sitePages: PageContent[] = [
     url: "/privacy-policy",
     pageType: "site",
     presentation: { shell: "content", variant: "reading-full" },
-    h1: "Privacy Policy",
-    seoTitle: `Privacy Policy | ${site.name}`,
+    h1: "Privacy policy",
+    seoTitle: `Privacy policy | ${site.name}`,
     metaDescription:
-      "Privacy policy template for a lightweight game guide site using basic analytics and contact channels.",
+      "Privacy policy for Nightwater Reference: what data is collected, how it is used, and how third-party services are configured.",
     summary:
-      "A starter privacy policy page for analytics, logs, and contact messages.",
+      "What data Nightwater Reference collects, what third-party services run on the site, and how to contact the maintainers about privacy questions.",
     hero: {
       eyebrow: "Privacy",
       subtitle:
-        "Explain what data the site collects, why it is used, and how visitors can make contact.",
-      ctas: [{ label: "Terms", href: "/terms" }],
+        "Nightwater Reference is a static-content launch hub. The only third-party data flows are the analytics and search-engine integrations documented below.",
+      ctas: [{ label: "Contact", href: "/contact" }],
     },
     quickAnswer:
-      "This page should be reviewed before launch and updated to match the deployed site's analytics, hosting, and contact setup.",
+      "Nightwater Reference does not require a login, does not store personal profiles, and does not sell user data. Third-party services that may set cookies or collect anonymous traffic are Google Analytics 4 and the Bing Webmaster Tools verification tag, both used only to measure launch-window traffic and confirm site ownership.",
     keyFacts: [
-      { label: "Analytics", value: "GA4 only when configured" },
-      { label: "Accounts", value: "No user accounts in V1" },
-      { label: "Ads", value: "Adsterra only when enabled" },
+      { label: "Accounts", value: "No accounts, no logins" },
+      { label: "Analytics", value: "Google Analytics 4 (anonymized)" },
+      { label: "Search verification", value: "Bing Webmaster Tools msvalidate tag" },
+      { label: "Data sales", value: "None" },
     ],
     modules: [
       {
-        id: "data",
+        id: "what-we-collect",
         type: "prose",
-        heading: "Information we collect",
+        heading: "What we collect",
         body:
-          "This site does not include accounts, comments, or payments. If GA4 is configured, analytics may collect aggregate usage information according to Google Analytics settings. If advertising is enabled, the third-party advertising provider may process technical request data and use cookies or similar technologies to deliver and measure ads.",
+          "When you load Nightwater Reference, the site serves static HTML and assets from Cloudflare. The only third-party services that may set cookies or collect anonymous traffic are Google Analytics 4 (used to measure page views, traffic sources, and engagement at launch) and the Bing Webmaster Tools verification tag (used only to confirm site ownership with Bing).",
       },
       {
-        id: "contact",
+        id: "what-we-do-not-collect",
         type: "prose",
-        heading: "Contact messages",
+        heading: "What we do not collect",
         body:
-          "If a contact method is added, messages may include the information visitors choose to send. Do not request sensitive personal information.",
+          "We do not require an account. We do not store your email, profile, or in-site actions. We do not place advertising trackers or sell personal data. The site does not run a comments section, a forum, or any user-generated content feature.",
       },
       {
-        id: "updates",
+        id: "third-party-services",
         type: "prose",
-        heading: "Policy updates",
+        heading: "Third-party services",
         body:
-          "Update this policy when analytics, hosting, contact methods, advertising providers, or other data collection behavior changes.",
+          "Google Analytics 4 is used under the standard anonymized IP and cookie-less mode configuration published by Google. The Bing Webmaster Tools msvalidate tag is a meta-tag verification marker only; it does not set cookies or collect user data on its own. Cloudflare Email Routing is used only to forward support@nightwater.pro to the maintainers' verified mailbox; the routing configuration does not log message contents.",
+      },
+      {
+        id: "contact-privacy",
+        type: "prose",
+        heading: "Privacy questions",
+        body:
+          "Send privacy questions or requests to support@nightwater.pro. The maintainers review each request and respond within the best-effort window declared on the contact page.",
       },
     ],
     faqIds: [],
     relatedPageIds: ["about", "contact", "terms"],
     schemaTypes: ["Article", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: RESEARCH_DATE,
   },
   {
     id: "terms",
@@ -220,52 +193,59 @@ export const sitePages: PageContent[] = [
     url: "/terms",
     pageType: "site",
     presentation: { shell: "content", variant: "reading-full" },
-    h1: "Terms of Use",
-    seoTitle: `Terms of Use | ${site.name}`,
+    h1: "Terms of use",
+    seoTitle: `Terms of use | ${site.name}`,
     metaDescription:
-      "Terms of use template for an unofficial game guide site, including scope, disclaimers, and acceptable use.",
+      "Terms of use for Nightwater Reference: editorial scope, source attribution, intellectual property, and disclaimer.",
     summary:
-      "A starter terms page for an unofficial guide site.",
+      "Editorial scope, source attribution rules, intellectual property, and disclaimer for Nightwater Reference.",
     hero: {
       eyebrow: "Terms",
       subtitle:
-        "Set clear expectations for unofficial status, informational use, and site changes.",
-      ctas: [{ label: "Privacy Policy", href: "/privacy-policy" }],
+        "Nightwater Reference is an unofficial fan-built hub. Editorial scope, source attribution, and intellectual property are documented below.",
+      ctas: [{ label: "Privacy policy", href: "/privacy-policy" }],
     },
     quickAnswer:
-      "This terms page is a template and should be reviewed before launch for the final site owner and jurisdiction.",
+      "Nightwater Reference is an unofficial fan-built hub. All current-game facts are sourced from the official Steam store page for AppID 3983860 and Steam-published news. The site is provided as-is, without warranty, and is not affiliated with Studio Ashty or Irox Games.",
     keyFacts: [
-      { label: "Use", value: "Informational guide content" },
-      { label: "Official status", value: "Unofficial fan site" },
-      { label: "Review", value: "Update before launch" },
+      { label: "Status", value: "Unofficial fan reference" },
+      { label: "Source rule", value: "Steam store page + Steam-published news" },
+      { label: "Affiliation", value: "Not affiliated with Studio Ashty or Irox Games" },
     ],
     modules: [
       {
-        id: "unofficial",
+        id: "editorial-scope",
         type: "prose",
-        heading: "Unofficial site",
+        heading: "Editorial scope",
         body:
-          "This site is not affiliated with the game publisher, developer, platform holders, or trademark owners unless explicitly stated after launch.",
+          "Nightwater Reference covers the launch-window facts that English-language readers are most likely to search: identity, release date, system requirements, platforms, gameplay loop, price, official Steam news, and a launch-window FAQ. Everything on the site is dated to the research date 2026-09-16 unless an update is signed and noted.",
       },
       {
-        id: "accuracy",
+        id: "source-attribution",
         type: "prose",
-        heading: "Information accuracy",
+        heading: "Source attribution",
         body:
-          "Guide information may change as official details are updated. Use official sources for final purchase, platform, and release decisions.",
+          "Every fact on this site is attributed to the official Steam store page (https://store.steampowered.com/app/3983860) or the Steam news index (https://store.steampowered.com/news/app/3983860). Where a community/video source is used only to corroborate a mechanism name already on the Steam page, the corroboration is disclosed in the page's sources block.",
       },
       {
-        id: "acceptable-use",
+        id: "intellectual-property",
         type: "prose",
-        heading: "Acceptable use",
+        heading: "Intellectual property",
         body:
-          "Do not misuse the site, scrape aggressively, interfere with service availability, or submit harmful content through any future contact channel.",
+          "Studio Ashty, Irox Games, and Nightwater are the property of their respective owners. This site is not endorsed by or affiliated with Studio Ashty or Irox Games. Use of the Nightwater name on this site is for editorial reference only and does not imply endorsement or partnership.",
+      },
+      {
+        id: "disclaimer",
+        type: "prose",
+        heading: "Disclaimer",
+        body:
+          "The site is provided as-is, without warranty of any kind. Facts are sourced from the official Steam store page at the research date and may change after publication. Always re-check the official Steam store page before acting on any launch-day detail.",
       },
     ],
     faqIds: [],
     relatedPageIds: ["about", "contact", "privacy-policy"],
     schemaTypes: ["Article", "BreadcrumbList"],
-    sourceStatus: "internal",
-    lastReviewed: "2026-06-18",
+    sourceStatus: "official",
+    lastReviewed: RESEARCH_DATE,
   },
 ];

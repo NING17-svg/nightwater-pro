@@ -6,6 +6,7 @@ import { faqItems } from "../src/data/faq";
 import { site } from "../src/data/site";
 import {
   getAllPages,
+  getIndexablePages,
   getFaqsForPage,
   getFinalRouteManifest,
   getLanguageAlternates,
@@ -24,7 +25,7 @@ function asString(value: string | URL): string {
   return value instanceof URL ? value.toString() : value;
 }
 
-const pages = getAllPages();
+const pages = getIndexablePages();
 const routeManifest = getFinalRouteManifest();
 const sitemapEntries = sitemap();
 const sitemapByUrl = new Map(sitemapEntries.map((entry) => [entry.url, entry]));
