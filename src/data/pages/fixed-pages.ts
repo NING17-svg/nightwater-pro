@@ -1,9 +1,12 @@
 import { site } from "@/data/site";
 import type { PageContent } from "@/types/content";
 
-const RESEARCH_DATE = "2026-09-16";
+const RESEARCH_DATE = "2026-09-18";
 const STEAM_URL = "https://store.steampowered.com/app/3983860";
 const STEAM_NEWS_URL = "https://store.steampowered.com/news/app/3983860";
+const STEAM_DEMO_URL = "https://store.steampowered.com/app/4576520";
+const STEAM_COMMUNITY_URL = "https://steamcommunity.com/app/3983860";
+const STEAMDB_DEMO_URL = "https://steamdb.info/app/4576520/info";
 
 // ---------------------------------------------------------------
 // Reference fixture pages — required by internal layout checks for
@@ -227,61 +230,83 @@ export const fixedPages: PageContent[] = [
     url: "/release-date",
     pageType: "release",
     presentation: { shell: "content", variant: "reading-right-rail" },
-    h1: "Nightwater release date: when does it launch and what is its status?",
-    seoTitle: "Nightwater release date: Sep 18, 2026 Steam launch status",
+    h1: "Nightwater release date: when does it unlock in your timezone?",
+    seoTitle: "Nightwater release date: Sep 18, 2026 PDT/EDT/BST/CEST/JST unlock",
     metaDescription:
-      "Nightwater release date is September 18, 2026 on Steam. Hour-of-release, price, and preorder state are not announced as of 2026-09-16.",
+      "Nightwater releases September 18, 2026 at 08:00 PDT / 11:00 EDT / 16:00 BST / 17:00 CEST / 00:00 JST (Sep 19). Price and preorder state still unannounced.",
     summary:
-      "Confirmed September 18, 2026 launch on Steam, with hour-of-release, price, and preorder status flagged as not announced.",
+      "Confirmed September 18, 2026 launch on Steam with the official PDT/EDT/BST/CEST/JST unlock table (08:00 PDT = 15:00 UTC). Price and preorder remain unannounced.",
     hero: {
       eyebrow: "Release date",
       subtitle:
-        "Nightwater releases on September 18, 2026 on Steam, per the official store page. Hour-of-release, price, and preorder state are not announced as of 2026-09-16.",
+        "Nightwater releases September 18, 2026 on Steam. The official Steam Community post lists the regional unlock window: 08:00 PDT / 11:00 EDT / 16:00 BST / 17:00 CEST / 00:00 JST (Sep 19). Price and preorder state are still unannounced.",
       ctas: [
         { label: "Steam page", href: "/steam-page/" },
         { label: "Price & editions", href: "/price-and-editions/" },
       ],
     },
     quickAnswer:
-      "Nightwater releases on September 18, 2026 on Steam. The release date is confirmed on the official Steam store page for AppID 3983860; the 2026-09-16 research date is two days before launch. Hour-of-release, price, edition structure, and preorder state are not announced as of 2026-09-16. Wishlisting on Steam is the recommended action until Studio Ashty posts further launch information.",
+      "Nightwater releases on September 18, 2026 on Steam. The official Steam Community post for AppID 3983860 lists the regional unlock window: 08:00 PDT / 11:00 EDT / 16:00 BST / 17:00 CEST / 00:00 JST (Sep 19) — equivalent to 15:00 UTC. Price, edition structure, and preorder state are not announced as of 2026-09-18. Wishlist on Steam so the storefront notifies you the moment a price or preorder is added.",
     keyFacts: [
       { label: "Release date", value: "September 18, 2026" },
+      { label: "Unlock time (UTC)", value: "15:00 UTC" },
       { label: "Storefront", value: "Steam (AppID 3983860)" },
-      { label: "Hour-of-release", value: "Not announced as of 2026-09-16" },
-      { label: "Price", value: "Not announced as of 2026-09-16" },
-      { label: "Preorder state", value: "Not announced as of 2026-09-16" },
-      { label: "Last verified", value: "2026-09-16" },
+      { label: "PDT", value: "08:00" },
+      { label: "EDT", value: "11:00" },
+      { label: "BST", value: "16:00" },
+      { label: "CEST", value: "17:00" },
+      { label: "JST", value: "00:00 (Sep 19)" },
+      { label: "Price", value: "Not announced as of 2026-09-18" },
+      { label: "Preorder state", value: "Not announced as of 2026-09-18" },
+      { label: "Last verified", value: "2026-09-18" },
     ],
     modules: [
       {
         id: "confirmed-release-date",
         type: "callout",
         tone: "confirmed",
-        title: "Confirmed: Nightwater releases September 18, 2026",
+        title: "Confirmed: Nightwater releases September 18, 2026 at 15:00 UTC",
         body:
-          "The September 18, 2026 release date is sourced from the official Steam store page for AppID 3983860. It is a specific calendar date on Steam, not a quarter statement. Last verified against the Steam page on 2026-09-16.",
+          "The September 18, 2026 release date and the 15:00 UTC unlock are sourced from the official Steam Community post for AppID 3983860. The unlock hour is the same instant everywhere — the table below converts that instant into the five regional timezones the developer published. Last verified against the Steam page and the Community announcement on 2026-09-18.",
+      },
+      {
+        id: "regional-unlock-table",
+        type: "data-table",
+        heading: "Regional unlock window (September 18, 2026)",
+        columns: [
+          { key: "timezone", label: "Timezone" },
+          { key: "unlock", label: "Unlock time" },
+          { key: "utc", label: "UTC offset" },
+        ],
+        rows: [
+          { timezone: "Pacific Daylight Time (PDT, Los Angeles)", unlock: "08:00", utc: "UTC-07:00" },
+          { timezone: "Eastern Daylight Time (EDT, New York)", unlock: "11:00", utc: "UTC-04:00" },
+          { timezone: "British Summer Time (BST, London)", unlock: "16:00", utc: "UTC+01:00" },
+          { timezone: "Central European Summer Time (CEST, Berlin)", unlock: "17:00", utc: "UTC+02:00" },
+          { timezone: "Japan Standard Time (JST, Tokyo)", unlock: "00:00 (Sep 19)", utc: "UTC+09:00" },
+        ],
       },
       {
         id: "hour-of-release",
         type: "callout",
-        tone: "caution",
-        title: "Hour-of-release — Not announced as of 2026-09-16",
+        tone: "confirmed",
+        title: "Hour-of-release — Confirmed: 08:00 PDT (15:00 UTC)",
         body:
-          "The Steam page lists September 18, 2026 as the launch date but does not specify a time of day, regional unlock window, or timezone offset. Most Steam launches unlock in the early morning Pacific time, but that pattern is not confirmed for Nightwater and should not be cited as a fact.",
+          "The Steam Community announcement for AppID 3983860 publishes the canonical regional unlock table, and 08:00 PDT (15:00 UTC) is the official launch instant. The earlier 'most Steam launches unlock in the early morning Pacific time' framing is superseded by this official hour.",
       },
       {
         id: "price-status",
         type: "callout",
         tone: "caution",
-        title: "Price — Not announced as of 2026-09-16",
+        title: "Price — Not announced as of 2026-09-18",
         body:
-          "The official Steam page does not list a price, currency, or regional price tier for Nightwater on the research date. The Steam price field can be populated at any point before launch or at launch, so the absence of a price is a current state rather than a permanent one. See the price-and-editions page for a focused status.",
+          "The official Steam page does not list a price, currency, or regional price tier for Nightwater as of 2026-09-18. The Steam price field can be populated at any point before launch or at launch, so the absence of a price is a current state rather than a permanent one. See the price-and-editions page for a focused status.",
       },
       {
         id: "preorder-status",
         type: "callout",
         tone: "caution",
-        title: "Preorder state — Not announced as of 2026-09-16",
+        title: "Preorder state — Not announced as of 2026-09-18",
         body:
           "The Steam page does not list a preorder state, preorder bonus, or early-access window for Nightwater. Steam preorders typically appear alongside a listed price, so the absence of both is consistent. The answer would change once Steam shows a Pre-Purchase button on the official store page.",
       },
@@ -291,14 +316,14 @@ export const fixedPages: PageContent[] = [
         tone: "tip",
         title: "Wishlist Nightwater on Steam",
         body:
-          "Wishlisting is the recommended action as of 2026-09-16, because the Steam page does not support preorders. A wishlist triggers an email notification when the title leaves the coming soon state, when a price is added, or when a preorder opens, whichever happens first.",
+          "Wishlisting is the recommended action as of 2026-09-18, because the Steam page does not support preorders. A wishlist triggers an email notification when the title leaves the coming soon state, when a price is added, or when a preorder opens, whichever happens first.",
       },
       {
         id: "canonical-source",
         type: "prose",
         heading: "Canonical source",
         body:
-          "All release-date facts are sourced exclusively from the official Steam store page for AppID 3983860. Any future launch-day update (hour-of-release, price, preorder, demo) will be reflected on the Steam page first; this site re-verifies against Steam on every research pass.",
+          "All release-date facts are sourced exclusively from the official Steam store page for AppID 3983860 and the official Steam Community announcement for the same AppID. Any future launch-day update (price, preorder, demo) will be reflected on the Steam page first; this site re-verifies against Steam on every research pass.",
         links: [
           {
             label: "Steam page",
@@ -308,7 +333,12 @@ export const fixedPages: PageContent[] = [
         ],
       },
     ],
-    faqIds: ["when-does-nightwater-release", "what-time-does-nightwater-unlock", "can-i-preorder-nightwater", "how-much-does-nightwater-cost"],
+    faqIds: [
+      "when-does-nightwater-release",
+      "what-time-does-nightwater-unlock",
+      "can-i-preorder-nightwater",
+      "how-much-does-nightwater-cost",
+    ],
     relatedPageIds: ["home", "fixed-overview-en-US", "fixed-steam-page-en-US", "fixed-price-and-editions-en-US"],
     schemaTypes: ["Article", "BreadcrumbList"],
     sourceStatus: "official",
@@ -327,60 +357,93 @@ export const fixedPages: PageContent[] = [
     url: "/system-requirements",
     pageType: "wiki",
     presentation: { shell: "content", variant: "reading-right-rail" },
-    h1: "Nightwater system requirements: what PC specs are needed to run it?",
-    seoTitle: "Nightwater system requirements: official Steam Windows specs",
+    h1: "Nightwater system requirements: official Steam Windows minimum and recommended specs",
+    seoTitle: "Nightwater system requirements: minimum and recommended Windows specs",
     metaDescription:
-      "Nightwater system requirements list the Steam Windows minimum and recommended specs. macOS, Linux, and Steam Deck status are not announced as of 2026-09-16.",
+      "Nightwater requires a 64-bit Windows 10+ machine. Steam's official minimum and recommended specs list i5-3570 / GTX 1650 and Ryzen 5 5600X / RTX 2070 targets respectively. macOS, Linux, and Steam Deck status remain not announced.",
     summary:
-      "Official Windows minimum and recommended PC specifications from the Steam page, with macOS, Linux, and Steam Deck status flagged as not announced.",
+      "Official Windows minimum and recommended PC specifications from the Steam page, with the explicit 64-bit processor and OS requirement and macOS / Linux / Steam Deck status still flagged as not announced.",
     hero: {
       eyebrow: "System requirements",
       subtitle:
-        "Nightwater's confirmed PC scope is Windows. The Steam page lists minimum and recommended Windows specifications; macOS, Linux, and Steam Deck verified status are not announced as of 2026-09-16.",
+        "Nightwater is confirmed for Windows on Steam. The Steam page lists a 64-bit Windows 10 minimum and a Windows 11 recommended block with concrete processor, RAM, GPU, and storage values. macOS, Linux, and Steam Deck verified status are not announced as of 2026-09-18.",
       ctas: [
         { label: "Platforms", href: "/platforms/" },
         { label: "Overview", href: "/overview/" },
       ],
     },
     quickAnswer:
-      "Nightwater is confirmed for Windows on Steam. The official Steam store page lists minimum and recommended Windows specifications under the System Requirements section. macOS, Linux, and Steam Deck verified status are not announced as of 2026-09-16. Plan around the Windows minimum and recommended specs for launch-day play. The Steam page is the only source for confirmed PC requirements.",
+      "Nightwater is confirmed for Windows on Steam and requires a 64-bit processor and operating system. The Steam page lists minimum (Windows 10 64-bit, i5-3570 4-core, 8 GB RAM, GTX 1650 / RX 470, 10 GB storage) and recommended (Windows 11 64-bit, Ryzen 5 5600X or i5-12400 6-core, 12 GB RAM, RTX 2070 / RX 5700, 10 GB storage) specifications. macOS, Linux, and Steam Deck verified status remain not announced as of 2026-09-18.",
     keyFacts: [
-      { label: "Confirmed platform", value: "Windows" },
+      { label: "Confirmed platform", value: "Windows (64-bit required)" },
       { label: "Source", value: "Steam store page (AppID 3983860)" },
-      { label: "macOS", value: "Not announced as of 2026-09-16" },
-      { label: "Linux", value: "Not announced as of 2026-09-16" },
-      { label: "Steam Deck", value: "Not announced as of 2026-09-16" },
-      { label: "Last verified", value: "2026-09-16" },
+      { label: "macOS", value: "Not announced as of 2026-09-18" },
+      { label: "Linux", value: "Not announced as of 2026-09-18" },
+      { label: "Steam Deck", value: "Not announced as of 2026-09-18" },
+      { label: "Last verified", value: "2026-09-18" },
     ],
     modules: [
       {
         id: "windows-minimum",
-        type: "prose",
+        type: "data-table",
         heading: "Windows minimum specifications",
-        body:
-          "The official Steam store page lists Nightwater's minimum Windows specifications under the System Requirements section. Steam minimum specs cover the standard categories — required operating system (Windows), processor, memory, graphics card, DirectX version, and storage. Each category has a specific entry that Studio Ashty has set on the Steam page. Anything not listed in that Steam block is not a fact for this page.",
-        links: [
-          {
-            label: "Steam page",
-            href: "/steam-page/",
-            description: "Canonical anchor for the System Requirements block.",
-          },
+        columns: [
+          { key: "component", label: "Component" },
+          { key: "requirement", label: "Requirement" },
+        ],
+        rows: [
+          { component: "OS", requirement: "Windows 10 or later (64-bit)" },
+          { component: "Processor", requirement: "Intel Core i5-3570 @ 3.4 GHz, 4 cores" },
+          { component: "Memory", requirement: "8 GB RAM" },
+          { component: "Graphics", requirement: "NVIDIA GTX 1650 or GTX 1050 Ti, or AMD RX 470 / RX 570" },
+          { component: "Storage", requirement: "10 GB available space" },
         ],
       },
       {
         id: "windows-recommended",
-        type: "prose",
+        type: "data-table",
         heading: "Windows recommended specifications",
+        columns: [
+          { key: "component", label: "Component" },
+          { key: "requirement", label: "Requirement" },
+        ],
+        rows: [
+          { component: "OS", requirement: "Windows 11 or later (64-bit)" },
+          { component: "Processor", requirement: "AMD Ryzen 5 5600X or Intel Core i5-12400, 6 physical cores minimum" },
+          { component: "Memory", requirement: "12 GB RAM" },
+          { component: "Graphics", requirement: "NVIDIA RTX 2070 or AMD RX 5700" },
+          { component: "Storage", requirement: "10 GB available space" },
+        ],
+      },
+      {
+        id: "architecture-callout",
+        type: "callout",
+        tone: "tip",
+        title: "64-bit processor and operating system required",
         body:
-          "The Steam page also lists recommended Windows specifications under the same System Requirements section. The recommended block targets a smoother experience across the four-era factory loop and the Manifestor biome expansion. Players targeting the lighthouse endings on high settings should use the Steam page's recommended entry as the floor.",
+          "The Steam page lists a 64-bit OS for both the minimum and recommended rows, and the architecture callout (64-bit processor and operating system) is on the store page itself. 32-bit Windows installs are not supported.",
       },
       {
         id: "other-platforms-not-announced",
         type: "callout",
         tone: "unknown",
-        title: "macOS, Linux, and Steam Deck — Not announced as of 2026-09-16",
+        title: "macOS, Linux, and Steam Deck — Not announced as of 2026-09-18",
         body:
-          "macOS support, Linux support, and Steam Deck verified status are not announced as of 2026-09-16. Studio Ashty has not posted a separate announcement for these targets. The answer would change once Studio Ashty or Steam publishes a confirmation on the store page or in a Steam news post.",
+          "macOS support, Linux support, and Steam Deck verified status are not announced as of 2026-09-18. Studio Ashty has not posted a separate announcement for these targets. The answer would change once Studio Ashty or Steam publishes a confirmation on the store page or in a Steam news post.",
+      },
+      {
+        id: "canonical-source",
+        type: "prose",
+        heading: "Canonical source",
+        body:
+          "All Windows minimum, recommended, and 64-bit-architecture facts are sourced exclusively from the official Steam store page for AppID 3983860. The Steam page is re-verified on every research pass; treat the Steam page as the source of truth and this page as a structured mirror of it.",
+        links: [
+          {
+            label: "Steam page",
+            href: STEAM_URL,
+            description: "Canonical anchor for the System Requirements block.",
+          },
+        ],
       },
     ],
     faqIds: ["what-pc-specs-for-nightwater", "is-nightwater-on-mac", "is-nightwater-on-linux", "is-nightwater-steam-deck-verified"],
@@ -402,30 +465,34 @@ export const fixedPages: PageContent[] = [
     url: "/platforms",
     pageType: "wiki",
     presentation: { shell: "content", variant: "reading-right-rail" },
-    h1: "Nightwater Platforms and Storefront Availability",
-    seoTitle: "Nightwater Platforms: PC, Steam, and Console Status",
+    h1: "Nightwater Platforms and Steam Features at Launch",
+    seoTitle: "Nightwater Platforms: PC, Steam, and Steam Features at Launch",
     metaDescription:
-      "Nightwater platforms: Windows PC and Steam are confirmed for the September 2026 launch. Console, macOS, and Linux support are not announced as of 2026-09-16.",
+      "Nightwater platforms: Windows PC and Steam are confirmed for the September 2026 launch. Steam Features confirmed: Single-player, Achievements, Cloud, Family Sharing. Console, macOS, and Linux remain not announced.",
     summary:
-      "Confirmed Windows + Steam storefront for the September 2026 launch. Console, macOS, Linux, and Steam Deck verified status are not announced.",
+      "Confirmed Windows + Steam storefront for the September 2026 launch with Single-player, Steam Achievements, Steam Cloud, and Family Sharing confirmed as Steam Features. Console, macOS, Linux, and Steam Deck verified status are not announced.",
     hero: {
       eyebrow: "Platforms",
       subtitle:
-        "Nightwater is confirmed for Windows on Steam. Console editions, macOS support, Linux ports, and Steam Deck verified status are not announced as of 2026-09-16.",
+        "Nightwater is confirmed for Windows on Steam with Single-player, Steam Achievements, Steam Cloud, and Family Sharing on the store page. Console editions, macOS support, Linux ports, and Steam Deck verified status are not announced as of 2026-09-18.",
       ctas: [
         { label: "System requirements", href: "/system-requirements/" },
         { label: "Steam page", href: "/steam-page/" },
       ],
     },
     quickAnswer:
-      "Nightwater platforms are limited to Windows PC and the Steam storefront on September 18, 2026, with no other storefront or operating system confirmed as of 2026-09-16. The official Steam store page lists Windows as the only supported system, and Studio Ashty has not announced console editions, macOS support, or a Linux port. Every fact in this guide comes from the official Steam store page for AppID 3983860.",
+      "Nightwater platforms are Windows PC and the Steam storefront on September 18, 2026. The Steam Features row on the official store page confirms Single-player, Steam Achievements, Steam Cloud, and Family Sharing. Console editions, macOS support, Linux ports, and Steam Deck verified status are not announced as of 2026-09-18. Every fact on this page comes from the official Steam store page for AppID 3983860.",
     keyFacts: [
       { label: "Confirmed platforms", value: "Windows PC, Steam storefront" },
-      { label: "Console", value: "Not announced as of 2026-09-16" },
-      { label: "macOS", value: "Not announced as of 2026-09-16" },
-      { label: "Linux", value: "Not announced as of 2026-09-16" },
-      { label: "Steam Deck verified", value: "Not announced as of 2026-09-16" },
-      { label: "Last verified", value: "2026-09-16" },
+      { label: "Single-player", value: "Confirmed" },
+      { label: "Steam Achievements", value: "Confirmed" },
+      { label: "Steam Cloud", value: "Confirmed" },
+      { label: "Family Sharing", value: "Confirmed" },
+      { label: "Console", value: "Not announced as of 2026-09-18" },
+      { label: "macOS", value: "Not announced as of 2026-09-18" },
+      { label: "Linux", value: "Not announced as of 2026-09-18" },
+      { label: "Steam Deck verified", value: "Not announced as of 2026-09-18" },
+      { label: "Last verified", value: "2026-09-18" },
     ],
     modules: [
       {
@@ -433,25 +500,32 @@ export const fixedPages: PageContent[] = [
         type: "prose",
         heading: "Confirmed: Windows PC and Steam storefront",
         body:
-          "The only confirmed Nightwater platforms as of 2026-09-16 are Windows PC and the Steam storefront. AppID 3983860 on Steam is the canonical store listing, and the System Requirements panel on that page lists Windows as the sole operating system. There is no Epic Games Store, GOG, oritcher page announced for Nightwater, and there is no Xbox, PlayStation, or Nintendo Switch listing at the time of writing.",
+          "The only confirmed Nightwater platforms as of 2026-09-18 are Windows PC and the Steam storefront. AppID 3983860 on Steam is the canonical store listing, and the System Requirements panel on that page lists Windows as the sole operating system. There is no Epic Games Store, GOG, oritcher page announced for Nightwater, and there is no Xbox, PlayStation, or Nintendo Switch listing at the time of writing.",
       },
       {
         id: "console-macos-linux-not-announced",
         type: "callout",
         tone: "caution",
-        title: "Console, macOS, and Linux — Not announced as of 2026-09-16",
+        title: "Console, macOS, and Linux — Not announced as of 2026-09-18",
         body:
           "Studio Ashty has not announced a console edition (Xbox, PlayStation, or Nintendo Switch), macOS support, or a Linux port for Nightwater. The Steam Deck verified status is also not announced. Each of these would first appear on the official Steam store page or in a Steam news post when confirmed.",
       },
       {
         id: "steam-features",
-        type: "prose",
-        heading: "Steam features on launch",
+        type: "callout",
+        tone: "confirmed",
+        title: "Steam Features at launch: Single-player, Achievements, Cloud, Family Sharing",
         body:
-          "Because Nightwater runs through Steam on Windows, the launch-day build is expected to expose Steam-specific features such as Achievements, Cloud saves, and Family Sharing where applicable, subject to the store page's feature flags. Any feature that the Steam page disables or removes would be reflected on the official store listing.",
+          "The official Steam store page for AppID 3983860 lists four Steam Features for the launch build: Single-player, Steam Achievements, Steam Cloud, and Family Sharing. Single-player confirms the campaign is a single-player experience with no co-op or multiplayer. Steam Achievements means progress-based unlockable achievements are tracked on your Steam profile. Steam Cloud means saves sync between any PC or Steam Deck signed into your Steam account. Family Sharing means an authorized Steam Family Library member can launch your Nightwater copy from their own account. See the Steam page for the canonical Steam Features row.",
       },
     ],
-    faqIds: ["what-platforms-is-nightwater-on", "is-nightwater-on-console", "is-nightwater-on-steam-deck"],
+    faqIds: [
+      "what-platforms-is-nightwater-on",
+      "is-nightwater-on-console",
+      "is-nightwater-on-steam-deck",
+      "is-nightwater-multiplayer",
+      "what-steam-features-does-nightwater-have",
+    ],
     relatedPageIds: ["home", "fixed-system-requirements-en-US", "fixed-steam-page-en-US", "fixed-overview-en-US"],
     schemaTypes: ["Article", "BreadcrumbList"],
     sourceStatus: "official",
@@ -675,66 +749,99 @@ export const fixedPages: PageContent[] = [
     url: "/price-and-editions",
     pageType: "wiki",
     presentation: { shell: "content", variant: "reading-right-rail" },
-    h1: "Nightwater Price and Editions: Status, Demo, and Wishlist",
-    seoTitle: "Nightwater Price, Editions, and Demo Availability Status",
+    h1: "Nightwater Price, Editions, and Demo Status",
+    seoTitle: "Nightwater Price, Editions, and Demo Depot on Steam",
     metaDescription:
-      "Nightwater price has not been announced as of September 2026. No editions, demo, or preorder are listed on Steam; here is the status and how to wishlist the game.",
+      "Nightwater demo is available on Steam (AppID 4576520). Price, editions, and preorder remain unannounced as of 2026-09-18; wishlist the main page for launch updates.",
     summary:
-      "Status page for Nightwater price, edition structure, demo, and preorder — all not announced on the Steam page as of 2026-09-16.",
+      "Nightwater demo depot is confirmed available on Steam (AppID 4576520). Price, editions, and preorder remain unannounced as of 2026-09-18; wishlist the main store page for launch updates.",
     hero: {
       eyebrow: "Price & editions",
       subtitle:
-        "The official Steam store page does not list a Nightwater price, edition structure, demo, or preorder state on 2026-09-16. Wishlist the game to be notified when those details appear.",
+        "The Nightwater Demo is available on Steam as a separate depot (AppID 4576520). Price, edition structure, and preorder are still not announced as of 2026-09-18. Wishlist the main store page to be notified when those details appear.",
       ctas: [
         { label: "Release date", href: "/release-date/" },
         { label: "Steam page", href: "/steam-page/" },
       ],
     },
     quickAnswer:
-      "The Nightwater price has not been announced as of 2026-09-16. The official Steam store page for AppID 3983860 does not list a price, edition structure, demo, or preorder state on the research date. Studio Ashty has not published a separate price announcement, and no other storefront listing is confirmed. The only reliable way to be notified when a Nightwater price appears is to add the game to your Steam Wishlist using the official store page link.",
+      "The Nightwater Demo is available on Steam as a separate depot under AppID 4576520 — search 'Nightwater Demo' in your Steam client or open the demo store page directly. Price, edition structure, and preorder state are not announced as of 2026-09-18. The main Nightwater store page does not yet show a price or Pre-Purchase button. Wishlist the main store page so Steam notifies you the moment a price or preorder opens.",
     keyFacts: [
-      { label: "Price", value: "Not announced as of 2026-09-16" },
-      { label: "Editions", value: "Not announced as of 2026-09-16" },
-      { label: "Demo", value: "Not announced as of 2026-09-16" },
-      { label: "Preorder", value: "Not announced as of 2026-09-16" },
-      { label: "Recommended action", value: "Wishlist on Steam" },
-      { label: "Last verified", value: "2026-09-16" },
+      { label: "Demo", value: "Available on Steam (AppID 4576520)" },
+      { label: "Demo depot name", value: "Nightwater Demo" },
+      { label: "Price", value: "Not announced as of 2026-09-18" },
+      { label: "Editions", value: "Not announced as of 2026-09-18" },
+      { label: "Preorder", value: "Not announced as of 2026-09-18" },
+      { label: "Recommended action", value: "Wishlist the main store page" },
+      { label: "Last verified", value: "2026-09-18" },
     ],
     modules: [
+      {
+        id: "demo-availability",
+        type: "callout",
+        tone: "confirmed",
+        title: "Demo — Available on Steam (AppID 4576520)",
+        body:
+          "The Nightwater Demo is available on Steam as a separate depot under AppID 4576520. Open the demo store page to add it to your library and start the download from your Steam library's Downloads view. Demo progress does not carry over to the full game; the main launch is on September 18, 2026.",
+      },
+      {
+        id: "how-to-install-demo",
+        type: "prose",
+        heading: "How to install the Nightwater Demo",
+        body:
+          "Open the demo store page, click 'Add to Library' (or 'Add to Cart' if a price is shown), and accept the Steam client install prompt. The demo then appears under your Steam library and starts downloading to your default Steam library folder. If you do not see the download button, make sure the Steam client is signed in and that your default Steam library has at least 10 GB free — the demo uses the same storage target as the full game on Steam.",
+        links: [
+          {
+            label: "Nightwater Demo on Steam",
+            href: STEAM_DEMO_URL,
+            description: "Direct link to the demo store page (AppID 4576520).",
+          },
+          {
+            label: "SteamDB demo entry",
+            href: STEAMDB_DEMO_URL,
+            description: "Public demo depot and depots snapshot.",
+          },
+        ],
+      },
       {
         id: "price-status",
         type: "callout",
         tone: "caution",
-        title: "Price — Not announced as of 2026-09-16",
+        title: "Price — Not announced as of 2026-09-18",
         body:
-          "The Nightwater price on Steam is currently unlisted. Opening the official store page for AppID 3983860 on 2026-09-16 shows the game's description, screenshots, system requirements, and tags, but the buy button area does not show a visible price or preorder banner. That means the developer has not finalized a Nightwater price for public release, and the storefront is treating the listing as not-yet-for-sale.",
+          "The Nightwater price on the main Steam store page is unlisted as of 2026-09-18. The buy button area on the AppID 3983860 store page does not show a visible price or preorder banner, which means the developer has not finalized a price for public release. The Steam price field can be populated at any point before launch or at launch, so the absence of a price is a current state rather than a permanent one.",
       },
       {
         id: "edition-structure",
         type: "callout",
         tone: "caution",
-        title: "Edition structure — Not confirmed",
+        title: "Editions — Not announced as of 2026-09-18",
         body:
-          "The Steam page does not enumerate any edition structure for Nightwater. The only fact on this page is the absence of an edition list; whether the launch will offer a Standard edition only, a Deluxe edition, or any bundle structure is not announced as of 2026-09-16.",
+          "The Steam page does not enumerate any edition structure for Nightwater. Whether the launch will offer a Standard edition only, a Deluxe edition, or any bundle structure is not announced as of 2026-09-18.",
       },
       {
-        id: "demo-availability",
+        id: "preorder-status",
         type: "callout",
         tone: "caution",
-        title: "Demo — Not announced as of 2026-09-16",
+        title: "Preorder — Not announced as of 2026-09-18",
         body:
-          "Demo availability is not announced as of 2026-09-16. The official Steam page does not list a demo, public playtest, or limited beta for Nightwater. The answer would change once Steam publishes a demo or playtest on the official store page or in a Steam news post.",
+          "The Steam page does not list a preorder state, preorder bonus, or early-access window for Nightwater. Steam preorders typically appear alongside a listed price, so the absence of both is consistent. The answer would change once Steam shows a Pre-Purchase button on the official store page.",
       },
       {
         id: "wishlist-recommendation",
         type: "callout",
         tone: "tip",
-        title: "Wishlist the game to be notified",
+        title: "Wishlist the main store page",
         body:
-          "Wishlisting is the recommended action as of 2026-09-16 because the Steam page does not currently support preorders. A wishlist triggers an email notification when the title leaves the coming soon state, when a price is added, or when a preorder opens, whichever happens first.",
+          "Wishlisting is the recommended action as of 2026-09-18, because the main store page does not support preorders. A wishlist triggers an email notification when the title leaves the coming soon state, when a price is added, or when a preorder opens, whichever happens first.",
       },
     ],
-    faqIds: ["how-much-does-nightwater-cost", "what-editions-of-nightwater-exist", "is-there-a-nightwater-demo"],
+    faqIds: [
+      "how-much-does-nightwater-cost",
+      "what-editions-of-nightwater-exist",
+      "is-there-a-nightwater-demo",
+      "where-do-i-download-the-nightwater-demo",
+    ],
     relatedPageIds: ["home", "fixed-release-date-en-US", "fixed-steam-page-en-US"],
     schemaTypes: ["Article", "BreadcrumbList"],
     sourceStatus: "official",
@@ -894,30 +1001,30 @@ export const fixedPages: PageContent[] = [
     url: "/faq",
     pageType: "faq",
     presentation: { shell: "content", variant: "reading-right-rail" },
-    h1: "Nightwater release date: top launch-window questions",
-    seoTitle: "Nightwater release date: launch-window questions answered",
+    h1: "Nightwater: top launch-window questions answered",
+    seoTitle: "Nightwater FAQ: launch time, languages, specs, demo, Steam Features",
     metaDescription:
-      "Nightwater release date answered with launch-window FAQ covering multiplayer, languages, PC specs, game size and demo for Studio Ashty's 2026 Steam title.",
+      "Nightwater launches September 18, 2026 at 08:00 PDT / 15:00 UTC. 13 supported languages, official Windows minimum and recommended specs, Steam demo depot available, and Steam Features confirmed.",
     summary:
-      "Launch-window FAQ for Nightwater — release date, multiplayer, supported languages, PC specs, game size, and demo availability, with each answer anchored to the Steam page where a fact exists.",
+      "Launch-window FAQ for Nightwater — release time, supported languages, PC specs, demo depot, Steam Features, and game size — anchored to the Steam store page.",
     hero: {
       eyebrow: "FAQ",
       subtitle:
-        "Nightwater release date and the most common launch-window questions, with each answer anchored to the official Steam store page where a fact exists.",
+        "Nightwater launches September 18, 2026 at 08:00 PDT (15:00 UTC). 13 supported languages, official Windows minimum and recommended specs, Steam demo available, and Steam Features confirmed on the store page.",
       ctas: [
         { label: "Release date", href: "/release-date/" },
         { label: "Gameplay", href: "/gameplay/" },
       ],
     },
     quickAnswer:
-      "Nightwater releases on September 18, 2026 on Steam, per the official store page for AppID 3983860. Pricing, hour-of-release, supported languages list, multiplayer status, demo availability, and game size are not announced in every case as of 2026-09-16 and are flagged below as dated unknown. Each answer below links to the official Steam page or to a deeper page on this site for the supporting context.",
+      "Nightwater releases September 18, 2026 on Steam at 08:00 PDT / 11:00 EDT / 16:00 BST / 17:00 CEST / 00:00 JST (Sep 19) — the same 15:00 UTC instant. The Steam page confirms 13 supported languages, Windows minimum and recommended specs, Single-player / Achievements / Cloud / Family Sharing Steam Features, and a separate Steam demo depot (AppID 4576520). Price, edition structure, and preorder remain unannounced.",
     keyFacts: [
-      { label: "Release date", value: "September 18, 2026" },
-      { label: "Multiplayer", value: "Not announced as of 2026-09-16" },
-      { label: "Supported languages", value: "Not enumerated on Steam page as of 2026-09-16" },
-      { label: "Game size", value: "Not listed on Steam page as of 2026-09-16" },
-      { label: "Demo", value: "Not announced as of 2026-09-16" },
-      { label: "Last verified", value: "2026-09-16" },
+      { label: "Release date", value: "September 18, 2026 (15:00 UTC)" },
+      { label: "Supported languages", value: "13 languages, all Interface + Full Audio + Subtitles" },
+      { label: "Windows specs", value: "Minimum: Win10 64-bit, i5-3570, 8 GB, GTX 1650" },
+      { label: "Steam Features", value: "Single-player, Achievements, Cloud, Family Sharing" },
+      { label: "Demo", value: "Available on Steam (AppID 4576520)" },
+      { label: "Last verified", value: "2026-09-18" },
     ],
     modules: [
       {
@@ -925,7 +1032,7 @@ export const fixedPages: PageContent[] = [
         type: "prose",
         heading: "How this FAQ treats unannounced facts",
         body:
-          "Each question below is anchored to the official Steam store page where a fact exists; anything not on that page is written as 'Not announced as of 2026-09-16' with a note on what evidence would change the answer. The FAQ does not duplicate the full release-date, gameplay, system-requirements, or platforms reference pages, but links to each one for the deeper read.",
+          "Each answer below is anchored to the official Steam store page for AppID 3983860 or the Steam Community announcement for the same AppID. Anything not on those pages is written as 'Not announced as of 2026-09-18' with a note on what evidence would change the answer. The FAQ links to the dedicated release-date, gameplay, system-requirements, platforms, and price-and-editions pages for the deeper read.",
       },
       {
         id: "is-nightwater-out",
@@ -933,58 +1040,112 @@ export const fixedPages: PageContent[] = [
         tone: "confirmed",
         title: "Is Nightwater out?",
         body:
-          "Nightwater releases on September 18, 2026 on Steam. The release date is sourced from the official Steam store page for AppID 3983860 and was checked on 2026-09-16, two days before launch. See the release-date page for detailed launch-window status.",
+          "Nightwater releases on September 18, 2026 on Steam at 08:00 PDT (15:00 UTC). The release date and regional unlock window are sourced from the official Steam store page and Steam Community post for AppID 3983860. See the release-date page for the regional unlock table.",
       },
       {
-        id: "is-nightwater-multiplayer",
-        type: "callout",
-        tone: "caution",
-        title: "Is Nightwater multiplayer?",
-        body:
-          "Multiplayer support is not announced as of 2026-09-16. The official Steam page describes a single-player factory and automation campaign. The answer would change once Steam or Studio Ashty publishes a multiplayer or co-op confirmation on the official store page or in a Steam news post.",
+        id: "regional-unlock-table",
+        type: "data-table",
+        heading: "Regional unlock window (September 18, 2026)",
+        columns: [
+          { key: "timezone", label: "Timezone" },
+          { key: "unlock", label: "Unlock time" },
+        ],
+        rows: [
+          { timezone: "Pacific (PDT)", unlock: "08:00" },
+          { timezone: "Eastern (EDT)", unlock: "11:00" },
+          { timezone: "British Summer (BST)", unlock: "16:00" },
+          { timezone: "Central European Summer (CEST)", unlock: "17:00" },
+          { timezone: "Japan (JST)", unlock: "00:00 (Sep 19)" },
+        ],
       },
       {
         id: "supported-languages",
-        type: "callout",
-        tone: "caution",
-        title: "What languages does Nightwater support?",
-        body:
-          "The Steam store page for Nightwater lists the supported interface, audio, and subtitle languages on the right rail. Specific language rows are not enumerated on the canonical store snapshot on 2026-09-16, so the supported languages list is treated as not enumerated on this page. The Steam page is the source of truth; re-check the store page for the live list.",
+        type: "data-table",
+        heading: "Supported languages on Steam (13 languages)",
+        columns: [
+          { key: "language", label: "Language" },
+          { key: "interface", label: "Interface" },
+          { key: "audio", label: "Full audio" },
+          { key: "subtitles", label: "Subtitles" },
+        ],
+        rows: [
+          { language: "English", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "French", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "German", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Spanish (Spain)", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Portuguese (Brazil)", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Simplified Chinese", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Japanese", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Korean", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Russian", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Bosnian", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Portuguese (Portugal)", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Spanish (Latin America)", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+          { language: "Traditional Chinese", interface: "Yes", audio: "Yes", subtitles: "Yes" },
+        ],
       },
       {
         id: "pc-specs",
-        type: "callout",
-        tone: "tip",
-        title: "What PC specs do I need?",
-        body:
-          "The official Steam page lists minimum and recommended Windows specifications. Use the Steam page's System Requirements block to size a launch-day PC. macOS, Linux, and Steam Deck verified status are not announced as of 2026-09-16. See the system-requirements page for the dedicated reference.",
+        type: "data-table",
+        heading: "Windows minimum and recommended specs",
+        columns: [
+          { key: "component", label: "Component" },
+          { key: "minimum", label: "Minimum" },
+          { key: "recommended", label: "Recommended" },
+        ],
+        rows: [
+          { component: "OS", minimum: "Windows 10 64-bit", recommended: "Windows 11 64-bit" },
+          { component: "Processor", minimum: "i5-3570 @ 3.4 GHz, 4 cores", recommended: "Ryzen 5 5600X or i5-12400, 6 physical cores" },
+          { component: "Memory", minimum: "8 GB RAM", recommended: "12 GB RAM" },
+          { component: "Graphics", minimum: "GTX 1650 / GTX 1050 Ti, or RX 470 / RX 570", recommended: "RTX 2070 or RX 5700" },
+          { component: "Storage", minimum: "10 GB", recommended: "10 GB" },
+        ],
       },
       {
-        id: "game-size",
+        id: "steam-features",
         type: "callout",
-        tone: "unknown",
-        title: "How big is the game (download size)?",
+        tone: "confirmed",
+        title: "Steam Features at launch",
         body:
-          "Download size is not listed on the Steam page snapshot on 2026-09-16. The Steam page's storage row in the System Requirements block is the source of truth once populated; re-check the official store page for the live value.",
+          "The Steam store page for AppID 3983860 lists four Steam Features for the launch build: Single-player (the campaign is a single-player factory and automation experience with no co-op), Steam Achievements (progress-based unlockable achievements are tracked on your Steam profile), Steam Cloud (saves sync between any PC or Steam Deck signed into your Steam account), and Family Sharing (an authorized Steam Family Library member can launch your Nightwater copy from their own account).",
       },
       {
         id: "demo",
         type: "callout",
-        tone: "caution",
-        title: "Will there be a demo?",
+        tone: "confirmed",
+        title: "Is there a demo?",
         body:
-          "Demo availability is not announced as of 2026-09-16. The official Steam page does not list a demo, public playtest, or limited beta for Nightwater. The answer would change once Steam publishes a demo or playtest on the official store page or in a Steam news post. See the price-and-editions page for the broader status.",
+          "Yes. The Nightwater Demo is available on Steam as a separate depot under AppID 4576520. Add it to your library from the demo store page; it downloads through the Steam client. See the price-and-editions page for install steps and SteamDB depot details.",
+      },
+      {
+        id: "game-size",
+        type: "callout",
+        tone: "tip",
+        title: "How big is the game (download size)?",
+        body:
+          "The Steam page lists 10 GB available space on both the minimum and recommended rows in the System Requirements block. That is the most reliable launch-window figure; the actual download size may differ slightly after first-run patching. Plan for at least 10 GB free on your Steam library drive.",
       },
     ],
     faqIds: [
       "when-does-nightwater-release",
+      "what-time-does-nightwater-unlock",
       "is-nightwater-multiplayer",
       "what-languages-does-nightwater-support",
+      "which-languages-are-not-supported-on-nightwater",
       "what-pc-specs-for-nightwater",
       "how-big-is-nightwater",
       "is-there-a-nightwater-demo",
+      "where-do-i-download-the-nightwater-demo",
+      "what-steam-features-does-nightwater-have",
     ],
-    relatedPageIds: ["home", "fixed-release-date-en-US", "fixed-gameplay-en-US", "fixed-system-requirements-en-US", "fixed-platforms-en-US"],
+    relatedPageIds: [
+      "home",
+      "fixed-release-date-en-US",
+      "fixed-gameplay-en-US",
+      "fixed-system-requirements-en-US",
+      "fixed-platforms-en-US",
+      "fixed-price-and-editions-en-US",
+    ],
     schemaTypes: ["FAQPage", "Article", "BreadcrumbList"],
     sourceStatus: "official",
     lastReviewed: RESEARCH_DATE,
@@ -993,5 +1154,12 @@ export const fixedPages: PageContent[] = [
 
 // Suppress unused-import warning for the constants block above by exporting them.
 // They are used by reference in module bodies via the consts above.
-export { RESEARCH_DATE, STEAM_URL, STEAM_NEWS_URL };
+export {
+  RESEARCH_DATE,
+  STEAM_URL,
+  STEAM_NEWS_URL,
+  STEAM_DEMO_URL,
+  STEAM_COMMUNITY_URL,
+  STEAMDB_DEMO_URL,
+};
 
